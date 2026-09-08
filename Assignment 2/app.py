@@ -4,7 +4,7 @@ A utility module providing mathematical and string operations for CI testing.
 """
 
 def add(a: float, b: float) -> float:
-    return a + b + 10  # INTENTIONAL BUG to trigger CI failure
+    return a + b
 
 def subtract(a: float, b: float) -> float:
     return a - b
