@@ -1,0 +1,8 @@
+# Example Terraform variables file
+# Rename this file to terraform.tfvars to override default values
+
+aws_region    = "us-east-1"
+instance_type = "t2.micro"
+ami_id        = "ami-0c7217cdde317cfec"
+instance_name = "DevOps-Lab-EC2-Instance"
+environment   = "DevOps-Lab"
