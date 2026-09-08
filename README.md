@@ -7,22 +7,25 @@ This repository contains practical implementations, source code, and comprehensi
 
 ---
 
-## Folder Structure
+## Folder Structure & Assignment Status
 
-| Directory | Title | Status |
-| :--- | :--- | :--- |
-| [📁 Assignment 1](./Assignment%201/) | **Git Repository and Branch Management** | ✅ Completed |
-| [📁 Assignment 2](./Assignment%202/) | DevOps Lab Assignment 2 | ⏳ Pending |
-| [📁 Assignment 3](./Assignment%203/) | DevOps Lab Assignment 3 | ⏳ Pending |
-| [📁 Assignment 4](./Assignment%204/) | DevOps Lab Assignment 4 | ⏳ Pending |
-| [📁 Assignment 5](./Assignment%205/) | DevOps Lab Assignment 5 | ⏳ Pending |
+| Directory | Title | Status | CI / CD Status |
+| :--- | :--- | :--- | :--- |
+| [📁 Assignment 1](./Assignment%201/) | **Git Repository and Branch Management** | ✅ Completed | — |
+| [📁 Assignment 2](./Assignment%202/) | **Continuous Integration Using GitHub Actions** | ✅ Completed | [![CI](https://github.com/pratik4352/Devops-Lab-Assignment/actions/workflows/assignment2-ci.yml/badge.svg)](https://github.com/pratik4352/Devops-Lab-Assignment/actions/workflows/assignment2-ci.yml) |
+| [📁 Assignment 3](./Assignment%203/) | DevOps Lab Assignment 3 | ⏳ Pending | — |
+| [📁 Assignment 4](./Assignment%204/) | DevOps Lab Assignment 4 | ⏳ Pending | — |
+| [📁 Assignment 5](./Assignment%205/) | DevOps Lab Assignment 5 | ⏳ Pending | — |
 
 ---
 
-## Assignment 1 Overview: Git Repository and Branch Management
+## Assignment 1 Overview
 - **Directory:** [`Assignment 1/`](./Assignment%201/)
 - **Core Topics:** Git 3-Tree Architecture, Feature Branching, 3-Way Merging, `git reset` vs. `git revert`
-- **Files:**
-  - [`calculator.py`](./Assignment%201/calculator.py): Python calculator utility demonstrating branch modifications and merges.
-  - [`ASSIGNMENT_1_REPORT.md`](./Assignment%201/ASSIGNMENT_1_REPORT.md): Complete lab report with architecture diagrams, command tables, and logs.
-  - [`README.md`](./Assignment%201/README.md): Assignment-specific guidelines.
+- **Report:** [`Assignment 1/ASSIGNMENT_1_REPORT.md`](./Assignment%201/ASSIGNMENT_1_REPORT.md)
+
+## Assignment 2 Overview
+- **Directory:** [`Assignment 2/`](./Assignment%202/)
+- **Core Topics:** Continuous Integration, GitHub Actions, Workflows, Jobs, Steps, Runners, Actions, Linting (`flake8`), Testing (`pytest`)
+- **Workflow:** [`.github/workflows/assignment2-ci.yml`](./.github/workflows/assignment2-ci.yml)
+- **Report:** [`Assignment 2/ASSIGNMENT_2_REPORT.md`](./Assignment%202/ASSIGNMENT_2_REPORT.md)
