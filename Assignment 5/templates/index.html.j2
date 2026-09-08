@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_title }}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #38bdf8;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .metadata-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .metadata-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+        .metadata-label {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .metadata-val {
+            text-align: right;
+            color: #e2e8f0;
+            font-family: monospace;
+        }
+        .status-ok {
+            color: #4ade80;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="badge">AWS & Ansible Automated</span>
+        <h1>{{ app_title }}</h1>
+        <p>This web server was automatically provisioned on an <strong>AWS EC2</strong> instance and configured using an <strong>Ansible Playbook</strong>.</p>
+        
+        <table class="metadata-table">
+            <tr>
+                <td class="metadata-label">System Status</td>
+                <td class="metadata-val status-ok">Operational</td>
+            </tr>
+            <tr>
+                <td class="metadata-label">Server Hostname</td>
+                <td class="metadata-val">{{ ansible_hostname }}</td>
+            </tr>
+            <tr>
+                <td class="metadata-label">OS Distribution</td>
+                <td class="metadata-val">{{ ansible_distribution }} {{ ansible_distribution_version }}</td>
+            </tr>
+            <tr>
+                <td class="metadata-label">Server IPv4</td>
+                <td class="metadata-val">{{ ansible_default_ipv4.address }}</td>
+            </tr>
+            <tr>
+                <td class="metadata-label">Application Version</td>
+                <td class="metadata-val">v{{ app_version }}</td>
+            </tr>
+            <tr>
+                <td class="metadata-label">Deployment Timestamp</td>
+                <td class="metadata-val">{{ ansible_date_time.iso8601 }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

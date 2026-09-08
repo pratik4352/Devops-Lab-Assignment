@@ -1,0 +1,9 @@
+# Ansible Inventory Configuration
+# Copy this file to 'inventory.ini' and substitute your actual EC2 Public IPv4 address and private key path.
+
+[webservers]
+web1 ansible_host=54.210.128.45 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/devops-ec2-key.pem
+
+[webservers:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

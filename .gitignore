@@ -19,3 +19,14 @@ override.tf.json
 *_override.tf.json
 .terraform.rc
 terraform.rc
+
+# Ansible Security & Credentials
+*.pem
+*.key
+*.id_rsa
+id_rsa
+id_rsa.pub
+*.retry
+inventory.ini
+!inventory.ini.example
+.ansible/

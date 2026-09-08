@@ -1,0 +1,34 @@
+---
+- name: Update Web Application Version and Content
+  hosts: webservers
+  become: yes
+
+  vars:
+    app_title: "DevOps Lab - Cloud Automation (Updated Version)"
+    app_version: "1.1.0"
+
+  tasks:
+    - name: Deploy updated index.html landing page
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+      notify: Reload Nginx
+
+    - name: Verify updated HTTP content
+      uri:
+        url: http://localhost
+        return_content: yes
+      register: page_content
+
+    - name: Confirm new version is serving
+      debug:
+        msg: "Successfully updated webpage to v{{ app_version }}!"
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
