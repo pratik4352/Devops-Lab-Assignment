@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA1 — Multi-Environment Container Deployment</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
+        .title h1 { font-size: 1.8rem; color: #38bdf8; margin-bottom: 8px; }
+        .title p { color: #94a3b8; font-size: 0.95rem; }
+        .env-badge {
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: #0284c7;
+            color: #ffffff;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .card h2 {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .kv-table { width: 100%; border-collapse: collapse; }
+        .kv-table td { padding: 8px 0; border-bottom: 1px solid #1e293b; font-size: 0.85rem; }
+        .kv-key { color: #94a3b8; }
+        .kv-val { text-align: right; font-family: monospace; color: #38bdf8; }
+        .footer {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <h1>FA1: Multi-Environment Container Deployment</h1>
+                <p>Git-Based Infrastructure as Code & Docker Orchestration</p>
+            </div>
+            <div class="env-badge" id="env-tag">QA / UAT / PROD</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2><span class="status-dot"></span> Container 1: Frontend</h2>
+                <table class="kv-table">
+                    <tr><td class="kv-key">Service</td><td class="kv-val">Nginx Web Server</td></tr>
+                    <tr><td class="kv-key">Role</td><td class="kv-val">Reverse Proxy / Static SPA</td></tr>
+                    <tr><td class="kv-key">Container Engine</td><td class="kv-val">Docker</td></tr>
+                    <tr><td class="kv-key">Provisioner</td><td class="kv-val">HashiCorp Terraform</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2><span class="status-dot"></span> Container 2: Backend API</h2>
+                <table class="kv-table">
+                    <tr><td class="kv-key">Service</td><td class="kv-val">Python Flask REST API</td></tr>
+                    <tr><td class="kv-key">Endpoint</td><td class="kv-val">/api/status</td></tr>
+                    <tr><td class="kv-key">State</td><td class="kv-val" id="api-status">Connecting...</td></tr>
+                    <tr><td class="kv-key">Container ID</td><td class="kv-val" id="api-host">-</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            Formative Assessment 1 (FA1) • DevOps Lab • Author: Pratik Ghavate (@pratik4352)
+        </div>
+    </div>
+
+    <script>
+        fetch('/api/status')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('api-status').innerText = data.status.toUpperCase();
+                document.getElementById('api-host').innerText = data.container_id;
+                document.getElementById('env-tag').innerText = data.environment.toUpperCase();
+            })
+            .catch(() => {
+                document.getElementById('api-status').innerText = "STANDALONE DEMO";
+            });
+    </script>
+</body>
+</html>
