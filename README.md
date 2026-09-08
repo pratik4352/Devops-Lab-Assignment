@@ -14,7 +14,7 @@ This repository contains practical implementations, source code, and comprehensi
 | [📁 Assignment 1](./Assignment%201/) | **Git Repository and Branch Management** | ✅ Completed | Git, GitHub, Python |
 | [📁 Assignment 2](./Assignment%202/) | **Continuous Integration Using GitHub Actions** | ✅ Completed | GitHub Actions, Python, Pytest, Flake8 |
 | [📁 Assignment 3](./Assignment%203/) | **Infrastructure as Code Using Terraform** | ✅ Completed | Terraform (HCL), AWS EC2 |
-| [📁 Assignment 4](./Assignment%204/) | DevOps Lab Assignment 4 | ⏳ Pending | — |
+| [📁 Assignment 4](./Assignment%204/) | **Docker Containerization and Docker Compose** | ✅ Completed | Docker, Dockerfile, Docker Compose, Flask |
 | [📁 Assignment 5](./Assignment%205/) | DevOps Lab Assignment 5 | ⏳ Pending | — |
 
 ---
@@ -30,5 +30,9 @@ This repository contains practical implementations, source code, and comprehensi
 - **Deliverables:** [`app.py`](./Assignment%202/app.py), [`.github/workflows/assignment2-ci.yml`](./.github/workflows/assignment2-ci.yml), [`ASSIGNMENT_2_REPORT.md`](./Assignment%202/ASSIGNMENT_2_REPORT.md)
 
 ### [Assignment 3: Infrastructure as Code Using Terraform](./Assignment%203/)
-- **Core Topics:** Infrastructure as Code, Declarative Configuration, Providers, Resources, Variables, State, Execution Lifecycle (`init`, `validate`, `plan`, `apply`, `destroy`), AWS EC2 Virtual Machine Provisioning
+- **Core Topics:** Infrastructure as Code, Declarative Configuration, Providers, Resources, Variables, State, AWS EC2 Virtual Machine Provisioning
 - **Deliverables:** [`main.tf`](./Assignment%203/main.tf), [`variables.tf`](./Assignment%203/variables.tf), [`outputs.tf`](./Assignment%203/outputs.tf), [`versions.tf`](./Assignment%203/versions.tf), [`ASSIGNMENT_3_REPORT.md`](./Assignment%203/ASSIGNMENT_3_REPORT.md)
+
+### [Assignment 4: Docker Containerization and Docker Compose](./Assignment%204/)
+- **Core Topics:** OS-Level Virtualization, Docker Architecture (Client, Daemon, Image, Container, Registry), Dockerfile Layer Caching, Docker Compose Multi-Service Management
+- **Deliverables:** [`app.py`](./Assignment%204/app.py), [`Dockerfile`](./Assignment%204/Dockerfile), [`docker-compose.yml`](./Assignment%204/docker-compose.yml), [`ASSIGNMENT_4_REPORT.md`](./Assignment%204/ASSIGNMENT_4_REPORT.md)
