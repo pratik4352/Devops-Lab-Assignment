@@ -1,31 +1,103 @@
-# Execution Screenshots Guide — FA1 & DevOps Lab
+# FA1 & DevOps Lab — Execution Screenshots Portfolio
 
-This directory is designated for storing execution screenshots required for the **FA1 (Formative Assessment 1)** evaluation on **10th & 11th September 2026**.
+This directory contains the visual proof of execution for the **FA1 (Formative Assessment 1)** and DevOps Lab evaluation on **10th & 11th September 2026**.
 
----
-
-## Required Screenshots Checklist (Mapped to 20-Mark Rubric)
-
-| # | Screenshot Name | Assessment Rubric | What to Capture | Command / Screen |
-| :-: | :--- | :--- | :--- | :--- |
-| **1** | `01_git_history_graph.png` | **Git Branching, Commits & Push (3 Marks)** | Terminal showing Git commit tree, branch merge, and Conventional Commits. | `git log --graph --oneline --decorate --all -n 12` |
-| **2** | `02_github_repo_overview.png` | **Git Repository & Initialization (2 Marks)** | Web browser showing the repository homepage on GitHub with all folders. | Browser: `https://github.com/pratik4352/Devops-Lab-Assignment` |
-| **3** | `03_github_actions_ci.png` | **Continuous Integration (Assignment 2)** | GitHub Actions tab showing workflow history (failure & success runs). | Browser: `https://github.com/pratik4352/Devops-Lab-Assignment/actions` |
-| **4** | `04_docker_2_containers.png` | **Docker Containerization — 2 Containers (4 Marks)** | Dockerfiles, images list, or running containers for Frontend & Backend. | `docker images` or `docker ps` |
-| **5** | `05_terraform_validation.png` | **Terraform Validation & Deployment (2 Marks)** | Terminal showing `terraform init` and `terraform validate` passing. | `cd FA1/terraform && terraform validate` |
-| **6** | `06_terraform_multienv_plan.png` | **Multi-Environment Config — QA/UAT/PROD (4 Marks)** | Terminal output of `terraform plan` using `-var-file="environments/qa.tfvars"`. | `terraform plan -var-file="environments/qa.tfvars"` |
-| **7** | `07_application_dashboard.png` | **Documentation & Working Output (1 Mark)** | Browser showing the live multi-environment web dashboard. | Browser: `http://localhost:8081` |
+**Repository Link:** [https://github.com/pratik4352/Devops-Lab-Assignment](https://github.com/pratik4352/Devops-Lab-Assignment)  
+**Evaluation Rubric:** 20 Marks Total
 
 ---
 
-## How to Take Screenshots on Windows
+## 📑 Evaluation Rubric & Visual Evidence Index
 
-1. Press **`Win + Shift + S`** to open the Windows Snipping Tool.
-2. Select **Window Snip** or drag across the terminal/browser window.
-3. Save the image into this `screenshots/` directory with the numbered filenames above.
-4. Add, commit, and push to GitHub:
-   ```bash
-   git add screenshots/
-   git commit -m "docs: add FA1 execution screenshots for evaluation"
-   git push origin main
-   ```
+| # | Evidence Category | Marks Allocated | Screenshot File | Status |
+| :-: | :--- | :---: | :--- | :---: |
+| **1** | Git Branching Strategy & Commit History | **3 Marks** | `01_git_history_graph.png` | ✅ Verified |
+| **2** | Git Repository Initialization & Structure | **2 Marks** | `02_github_repo_overview.png` | ✅ Verified |
+| **3** | Continuous Integration (GitHub Actions) | **CI Rubric** | `03_github_actions_ci.png` | ✅ Verified |
+| **4** | Docker Multi-Container Architecture (2 Containers) | **4 Marks** | `04_docker_2_containers.png` | ✅ Verified |
+| **5** | Terraform Validation & Provider Setup | **2 Marks** | `05_terraform_validation.png` | ✅ Verified |
+| **6** | Multi-Environment Deployment (QA/UAT/PROD) | **4 Marks** | `06_terraform_multienv_plan.png` | ✅ Verified |
+| **7** | Working Application Output & Dashboard | **1 Mark** | `07_application_dashboard.png` | ✅ Verified |
+
+---
+
+## 1. Git Branching Strategy & Commit History (3 Marks)
+
+Demonstration of Git 3-tree architecture, feature branch creation, Conventional Commits, and clean 3-way merge into `main`.
+
+![01 Git History Graph](01_git_history_graph.png)
+
+*Command executed:*
+```bash
+git log --graph --oneline --decorate --all -n 12
+```
+
+---
+
+## 2. GitHub Repository Initialization & Structure (2 Marks)
+
+Repository root view on GitHub verifying clean organization into `Assignment 1`, `Assignment 2`, `Assignment 3`, `Assignment 4`, `Assignment 5`, `FA1`, and `screenshots`.
+
+![02 GitHub Repo Overview](02_github_repo_overview.png)
+
+*Repository URL:* `https://github.com/pratik4352/Devops-Lab-Assignment`
+
+---
+
+## 3. Continuous Integration via GitHub Actions (Assignment 2)
+
+Workflow execution history in GitHub Actions demonstrating the automated test pipeline catching an intentional arithmetic failure (`Run #1`), followed by the fix and passing build (`Run #2`).
+
+![03 GitHub Actions CI](03_github_actions_ci.png)
+
+*Workflow actions URL:* `https://github.com/pratik4352/Devops-Lab-Assignment/actions`
+
+---
+
+## 4. Docker Multi-Container Architecture (4 Marks)
+
+Demonstration of the 2-container microservices architecture:
+- **Container 1 (Frontend):** Nginx Web Server serving multi-environment dashboard on port `8081`.
+- **Container 2 (Backend):** Python Flask REST API running on port `5001`.
+
+![04 Docker Multi-Container Architecture](04_docker_2_containers.png)
+
+*Configuration file:* `FA1/docker-compose.yml` & `FA1/docker/`
+
+---
+
+## 5. Terraform Provider & Syntax Validation (2 Marks)
+
+Terraform validation proving syntax correctness, provider schema validation, and module integrity using `kreuzwerker/docker` provider.
+
+![05 Terraform Validation](05_terraform_validation.png)
+
+*Command executed:*
+```bash
+cd FA1/terraform
+terraform validate
+```
+
+---
+
+## 6. Multi-Environment Deployment — QA, UAT, PROD (4 Marks)
+
+Execution of `terraform plan` demonstrating environment-specific parameter injection without duplicating code (`-var-file="environments/qa.tfvars"`).
+
+![06 Terraform Multi-Environment Plan](06_terraform_multienv_plan.png)
+
+*Command executed:*
+```bash
+cd FA1/terraform
+terraform plan -var-file="environments/qa.tfvars"
+```
+
+---
+
+## 7. Working Application Output & Dashboard (1 Mark)
+
+Live view of the responsive multi-environment web application dashboard showing dynamic environment configuration, API connectivity, and service health checks.
+
+![07 Application Dashboard](07_application_dashboard.png)
+
+*Access point:* `FA1/docker/frontend/index.html` (or `http://localhost:8081`)
