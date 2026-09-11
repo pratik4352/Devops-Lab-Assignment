@@ -5,19 +5,6 @@ This directory contains the visual proof of execution for the **FA1 (Formative A
 **Repository Link:** [https://github.com/pratik4352/Devops-Lab-Assignment](https://github.com/pratik4352/Devops-Lab-Assignment)  
 **Evaluation Rubric:** 20 Marks Total
 
----
-
-## 📑 Evaluation Rubric & Visual Evidence Index
-
-| # | Evidence Category | Marks Allocated | Screenshot File | Status |
-| :-: | :--- | :---: | :--- | :---: |
-| **1** | Git Branching Strategy & Commit History | **3 Marks** | `01_git_history_graph.png` | ✅ Verified |
-| **2** | Git Repository Initialization & Structure | **2 Marks** | `02_github_repo_overview.png` | ✅ Verified |
-| **3** | Continuous Integration (GitHub Actions) | **CI Rubric** | `03_github_actions_ci.png` | ✅ Verified |
-| **4** | Docker Multi-Container Architecture (2 Containers) | **4 Marks** | `04_docker_2_containers.png` | ✅ Verified |
-| **5** | Terraform Validation & Provider Setup | **2 Marks** | `05_terraform_validation.png` | ✅ Verified |
-| **6** | Multi-Environment Deployment (QA/UAT/PROD) | **4 Marks** | `06_terraform_multienv_plan.png` | ✅ Verified |
-| **7** | Working Application Output & Dashboard | **1 Mark** | `07_application_dashboard.png` | ✅ Verified |
 
 ---
 
